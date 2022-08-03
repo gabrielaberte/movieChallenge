@@ -4,12 +4,15 @@ import { Pagination, Card, List, Carousel } from "antd";
 import getAllServices from "../../services/get-all-movies";
 import { DivTopMovies } from "./styles";
 import Slider from "react-slick";
+import { Navigate, useNavigate } from "react-router-dom";
+
 
 function TopMovies() {
   const [topMovies, setTopMovies] = useState<undefined | []>();
   const [page, setPage] = useState<number>(1);
   const [current, setCurrent] = useState(1);
   const [totalPages, setTotalPages] = useState<number>();
+  let navigate = useNavigate();
 
   useEffect(() => {
     getAllServices(page).then((result) => {
@@ -17,7 +20,6 @@ function TopMovies() {
       setTotalPages(result.data.total_pages);
     });
   }, [page]);
-
 
   const settings = {
     dots: true,
@@ -31,18 +33,19 @@ function TopMovies() {
   return (
     <div>
       <div>
-        <h2> Popular Movies </h2>
+        <h2> Filmes Populares </h2>
         <Slider {...settings}>
           {topMovies &&
             topMovies?.map((e: any) => (
-              <DivTopMovies>
-                
+              <DivTopMovies key={e.id}>
                 <img
                   src={`https://image.tmdb.org/t/p/w500/${e.poster_path}`}
-                    ></img>
-                    <h3>{e.title}</h3>
-                    <p> {e.release_date}</p>
-                    <span>Nota: {e.vote_average}</span>
+                ></img>
+                <a key={e.id} onClick={() => navigate(`/movie/${e.id}`)}>
+                  <h3>{e.title}</h3>
+                  <p> {e.release_date}</p>
+                  <span>Nota: {e.vote_average}</span>
+                </a>
               </DivTopMovies>
             ))}
         </Slider>
