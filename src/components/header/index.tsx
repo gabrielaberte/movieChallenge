@@ -2,17 +2,19 @@ import React from "react";
 import { Dropdown, Layout, Menu, Space } from "antd";
 import { DivMenu } from "./styles";
 import { LoginOutlined, EditOutlined } from "@ant-design/icons";
+import { Navigate, useNavigate } from "react-router-dom";
 
 const { Header } = Layout;
 
 function NavBar() {
+  let navigate = useNavigate();
   const menuFilmes = (
     <Menu
       items={[
         {
           key: "1",
           label: (
-            <a target="/" rel="/" href="/">
+            <a onClick={() => navigate("/")}>
               Populares
             </a>
           ),
@@ -35,7 +37,7 @@ function NavBar() {
         {
           key: "1",
           label: (
-            <a target="/" rel="/" href="/">
+            <a onClick={() => navigate("/")}>
               Populares
             </a>
           ),
@@ -50,23 +52,19 @@ function NavBar() {
         },
       ]}
     />
-    );
-    
-    const menuPerfil = (
+  );
+
+  const menuPerfil = (
     <Menu
       items={[
         {
-              key: "1",
-            icon: <LoginOutlined />,
-          label: (
-            <a target="/" rel="/" href="/">
-              Perfil
-            </a>
-          ),
+          key: "1",
+          icon: <LoginOutlined />,
+          label: <a onClick={() => navigate("/")}>Perfil</a>,
         },
         {
-            key: "2",
-            icon: <EditOutlined />,
+          key: "2",
+          icon: <EditOutlined />,
           label: (
             <a target="/" rel="/" href="/">
               Configurações
@@ -95,10 +93,12 @@ function NavBar() {
                 </a>
               </Dropdown>
             </div>
-                      <div>
-                          <Dropdown overlay={menuPerfil}>
+            <div>
+              <Dropdown overlay={menuPerfil}>
                 <a onClick={(e) => e.preventDefault()}>
-                  <Space><LoginOutlined /></Space>
+                  <Space>
+                    <LoginOutlined />
+                  </Space>
                 </a>
               </Dropdown>
             </div>

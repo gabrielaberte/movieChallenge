@@ -2,9 +2,10 @@ import styled from "styled-components";
 
 export const DivMovieDetail = styled.div`
   display: flex;
-  background-color: antiquewhite;
+
   justify-content: center;
   padding: 15px;
+  width: fit-content;
 
   img {
     padding: 15px;
@@ -13,5 +14,11 @@ export const DivMovieDetail = styled.div`
 
   div{
     padding: 15px;
+    justify-content: flex-start;
+  }
+
+  span {
+    flex-wrap: wrap;
+    width: fit-content;
   }
 `;

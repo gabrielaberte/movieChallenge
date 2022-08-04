@@ -33,7 +33,7 @@ function TopMovies() {
   return (
     <div>
       <div>
-        <h2> Filmes Populares </h2>
+        <h2 > Filmes Populares </h2>
         <Slider {...settings}>
           {topMovies &&
             topMovies?.map((e: any) => (

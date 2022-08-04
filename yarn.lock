@@ -7979,6 +7979,11 @@ react-router@6.3.0:
   dependencies:
     history "^5.2.0"
 
+react-score-indicator@^2.2.1:
+  version "2.2.1"
+  resolved "https://registry.yarnpkg.com/react-score-indicator/-/react-score-indicator-2.2.1.tgz#79a1292f607a3e77eecabb7deeff58e9584adf67"
+  integrity sha512-I4TZ2Dlo8s3Q4z1oXWGcMMiYyivgbgGqOyHf2C0PJcJX0yr5QIaYnzBemoopoM+Nw1hGcwLiMikD7b/ovTZsPA==
+
 react-scripts@5.0.1:
   version "5.0.1"
   resolved "https://registry.yarnpkg.com/react-scripts/-/react-scripts-5.0.1.tgz#6285dbd65a8ba6e49ca8d651ce30645a6d980003"

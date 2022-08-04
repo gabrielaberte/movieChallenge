@@ -22,3 +22,9 @@ export const DivTopMovies = styled.div`
     color: inherit;    
   }
 `;
+
+export const DivContent = styled.div`
+  display: flex !important;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+`
