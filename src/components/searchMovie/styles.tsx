@@ -3,23 +3,34 @@ import styled from "styled-components";
 export const DivTopMovies = styled.div`
   display: flex !important;
   flex-direction: column;
-  justify-content: center;
   width: min-content;
-  height: 280px;
-  align-items: center;
-  align-self: center;
+  height: 560px;
+  padding: 10px;
+  margin: 5px;
+  background-color: #001529;
+  border: black 1px solid;
+  border-radius: 15px;
+  box-shadow: 10px 5px 5px black;
+  :hover {
+    background-color: #11283D;
+  }
 
   img {
-    height: 150px;
+    height: 450px;
     display: flex !important;
     justify-content: center !important;
     align-items: center;
     align-self: center;
+    width: 300px;
   }
 
   a {
     text-decoration: none;
     color: inherit;    
+  }
+
+  h4 {
+    color: inherit
   }
 `;
 

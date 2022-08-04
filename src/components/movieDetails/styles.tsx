@@ -1,24 +1,42 @@
 import styled from "styled-components";
 
-export const DivMovieDetail = styled.div`
-  display: flex;
-
+export const DivTopMovies = styled.div`
+  display: flex !important;
+  flex-direction: column;
   justify-content: center;
-  padding: 15px;
-  width: fit-content;
+  width: min-content;
+  height: fit-content;
+  padding: 10px;
+  margin: 5px;
+  background-color: #001529;
+  border: black 1px solid;
+  border-radius: 15px;
+  box-shadow: 10px 5px 5px black;
+  :hover {
+    background-color: #11283D;
+  }
 
   img {
-    padding: 15px;
-    height: 500px;
+    height: 450px;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center;
+    align-self: center;
+    width: 300px;
   }
 
-  div{
-    padding: 15px;
-    justify-content: flex-start;
+  a {
+    text-decoration: none;
+    color: inherit;    
   }
 
-  span {
-    flex-wrap: wrap;
-    width: fit-content;
+  h4 {
+    color: inherit
   }
 `;
+
+export const DivContent = styled.div`
+  display: flex !important;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+`
