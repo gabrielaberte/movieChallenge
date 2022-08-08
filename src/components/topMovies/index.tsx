@@ -21,18 +21,18 @@ function TopMovies() {
 
   const settings = {
     dots: true,
-    infinite: true,
+    infinite: false,
     speed: 500,
-    slidesToShow: 5,
+    slidesToShow: 4.5,
     slidesToScroll: 4,
     margin: "20px",
   };
 
   return (
     <div>
-      <div style={{ marginLeft: "50px", marginRight: '50px' }}>
-        <h2 style={{color: 'inherit'}}> Filmes Populares </h2>
+      <div style={{ marginLeft: "50px", marginRight: "50px" }}>
         <DivContent>
+          <h2 style={{ color: "inherit" }}> Filmes Populares </h2>
           <Slider {...settings}>
             {topMovies &&
               topMovies?.map((e: any) => (
@@ -41,8 +41,7 @@ function TopMovies() {
                     src={`https://image.tmdb.org/t/p/w500/${e.poster_path}`}
                   ></img>
                   <a key={e.id} onClick={() => navigate(`/movie/${e.id}`)}>
-                    <h3>{e.title}</h3>
-                    <p> {e.release_date}</p>
+                    <h3 style={{ marginTop: "10px" }}>{e.title}</h3>
                     <span>Nota: {e.vote_average}</span>
                   </a>
                 </DivTopMovies>

@@ -18,19 +18,20 @@ function LatestMovies() {
 
   const settings = {
     dots: true,
-    infinite: true,
+    infinite: false,
     speed: 500,
-    slidesToShow: 4,
+    slidesToShow: 4.5,
     slidesToScroll: 4,
   };
 
   return (
     <div>
       <div style={{ height: "400px", margin: "50px" }}>
-        <h2 style={{ marginTop: "50px", color: "inherit" }}>
-          Próximas Estreias e Mais Recentes
-        </h2>
         <DivContent>
+          {" "}
+          <h2>
+            Próximas Estreias e Mais Recentes
+          </h2>
           <Slider {...settings}>
             {latestMovies &&
               latestMovies?.map((e: any) => (
@@ -39,8 +40,8 @@ function LatestMovies() {
                     src={`https://image.tmdb.org/t/p/w500/${e.poster_path}`}
                   ></img>
                   <a key={e.id} onClick={() => navigate(`/movie/${e.id}`)}>
-                    <h3>{e.title}</h3>
-                    <p> {e.release_date}</p>
+                    <h4>{e.title}</h4>
+                    <p> {e.release_date.split("-").reverse().join("/")}</p>
                     <span>Nota: {e.vote_average}</span>
                   </a>
                 </DivTopMovies>

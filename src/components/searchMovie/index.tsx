@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import { AudioOutlined } from "@ant-design/icons";
 import { Input, Space } from "antd";
 import { useNavigate } from "react-router-dom";
 import getSearchMovie from "../../services/get-search-movies";

@@ -4,7 +4,6 @@ export const DivTopMovies = styled.div`
   display: flex !important;
   flex-direction: column;
   width: min-content;
-  height: 560px;
   padding: 10px;
   margin: 5px;
   background-color: #001529;
@@ -16,12 +15,12 @@ export const DivTopMovies = styled.div`
   }
 
   img {
-    height: 450px;
+    height: 300px;
     display: flex !important;
     justify-content: center !important;
     align-items: center;
     align-self: center;
-    width: 300px;
+    width: 200px;
   }
 
   a {
