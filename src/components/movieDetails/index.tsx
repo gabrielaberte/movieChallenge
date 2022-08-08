@@ -3,6 +3,8 @@ import getMovie from "../../services/get-movie";
 import { Rate } from "antd";
 import "./index.css";
 import {
+  DivColumn,
+  DivContainerFora,
   DivContent,
   DivContentDetail,
   DivCredits,
@@ -42,21 +44,14 @@ export default function MovieDetails() {
   console.log(principalCast);
 
   return (
-    <div
-      style={{
-        height: "100vh",
-        display: "flex",
-        justifyContent: "center",
-        alignItems: "center",
-      }}
-    >
+    <DivContainerFora>
       {movie && (
         <DivContent>
           {movie && (
             <DivTopMovies>
               <h1>{movie.title}</h1>
 
-              <div style={{ display: "flex" }}>
+              <DivColumn>
                 <img
                   src={
                     movie?.poster_path
@@ -73,14 +68,16 @@ export default function MovieDetails() {
                       alignItems: "center",
                     }}
                   >
-                    
                     <Rate
-                      style={{ display: 'flex',justifyContent: 'space-evenly', marginRight: '15px' }}
+                      style={{
+                        display: "flex",
+                        justifyContent: "space-evenly",
+                        marginRight: "15px",
+                      }}
                       disabled
                       defaultValue={rate}
                     />{" "}
                     <p>{movie.vote_average}/10</p>
-                    
                   </div>
                   <p>Gênero: {genres?.map((e: any) => `${e.name} `)}</p>
                   <p>Lançamento: {data_brasileira}</p>
@@ -100,11 +97,11 @@ export default function MovieDetails() {
                       ))}
                   </DivContent>
                 </div>
-              </div>
+              </DivColumn>
             </DivTopMovies>
           )}
         </DivContent>
       )}
-    </div>
+    </DivContainerFora>
   );
 }
