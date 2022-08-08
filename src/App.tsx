@@ -6,7 +6,6 @@ import ptBR from "antd/lib/locale/pt_BR";
 import { ConfigProvider } from "antd";
 import { useRoutes } from "react-router-dom";
 import MoviePage from "./pages/MoviePage";
-import Global from "./components/globalStyle";
 
 function App() {
   const routes = useRoutes([

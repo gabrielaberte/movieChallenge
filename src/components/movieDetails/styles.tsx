@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import { px2vw } from "../utils";
 
 export const DivContainerFora = styled.div`
   height: 100vh;

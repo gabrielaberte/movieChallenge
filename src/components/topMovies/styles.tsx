@@ -39,6 +39,10 @@ export const DivTopMovies = styled.div`
   p {
     margin: 0
   }
+
+
+
+
 `;
 
 export const DivContent = styled.div`
