@@ -51,6 +51,7 @@ export const DivContent = styled.div`
   display: flex !important;
   flex-wrap: wrap;
   justify-content: space-evenly;
+   margin-bottom: 20px;
 `
 
 export const DivSearch = styled.div`
