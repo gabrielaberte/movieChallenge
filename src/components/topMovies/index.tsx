@@ -8,7 +8,7 @@ import "./index.css";
 function TopMovies() {
   const [topMovies, setTopMovies] = useState<undefined | []>();
   const [page, setPage] = useState<number>(1);
-  const [current, setCurrent] = useState(1);
+  const [current, setCurrent] = useState<boolean>(false);
   const [totalPages, setTotalPages] = useState<number>();
   let navigate = useNavigate();
 
@@ -19,18 +19,22 @@ function TopMovies() {
     });
   }, [page]);
 
+  var largura: number = window.screen.width;
+
+  
+
   const settings = {
     dots: true,
     infinite: false,
     speed: 500,
-    slidesToShow: 4.5,
-    slidesToScroll: 4,
+    slidesToShow: (largura>700) ? 4.5 : 1.5,
+    slidesToScroll: (largura>700) ? 4 : 1,
     margin: "20px",
   };
 
   return (
     <div>
-      <div style={{ marginLeft: "50px", marginRight: "50px" }}>
+      <div style={{ marginLeft: "50px", marginRight: "50px"}}>
         <DivContent>
           <h2 style={{ color: "inherit" }}> Filmes Populares </h2>
           <Slider {...settings}>

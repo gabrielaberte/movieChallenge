@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Input, Space } from "antd";
 import { useNavigate } from "react-router-dom";
 import getSearchMovie from "../../services/get-search-movies";
-import { DivContent, DivTopMovies } from "./styles";
+import { DivContent, DivSearch, DivTopMovies } from "./styles";
 import noImage from "../../assets/no-image.png";
 
 const { Search } = Input;
@@ -25,20 +25,23 @@ function SearchMovie() {
     }
   }, [searchId]);
 
+  var largura: number = window.screen.width;
+
+
   return (
     <div>
       <div>
-        <div style={{display: 'flex', margin: '15px', justifyContent: 'space-around', marginTop: '25px'}}>
+        <DivSearch>
           <h2 style={{color: 'inherit'}}>Descubra milhões de filmes!</h2>
           <Space direction="vertical">
             <Search
               onChange={(e) => setSearchId(e.target.value)}
               placeholder="Procure por um Filme"
               onSearch={onSearch}
-              style={{ width: 500 }}
+              style={{ width: (largura>700) ? 500 : 200}}
             />
           </Space>
-        </div>
+        </DivSearch>
         <DivContent>
           {searchList &&
             searchList.map((e: any) => (

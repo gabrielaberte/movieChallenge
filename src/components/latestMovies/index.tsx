@@ -15,18 +15,22 @@ function LatestMovies() {
       setlatestMovies(result.data.results);
     });
   }, []);
+  var largura: number = window.screen.width;
+
+  
 
   const settings = {
     dots: true,
     infinite: false,
     speed: 500,
-    slidesToShow: 4.5,
-    slidesToScroll: 4,
+    slidesToShow: (largura>700) ? 4.5 : 1.5,
+    slidesToScroll: (largura>700) ? 4 : 1,
+    margin: "20px",
   };
 
   return (
     <div>
-      <div style={{ height: "400px", margin: "50px" }}>
+      <div style={{margin: "50px"}}>
         <DivContent>
           {" "}
           <h2>
